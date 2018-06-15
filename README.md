@@ -1,5 +1,7 @@
 # Aon
 
+[![](https://jitpack.io/v/YpwCode/Aon.svg)](https://jitpack.io/#YpwCode/Aon)
+
 一个简单的注解库
 
 ## DownLoad
@@ -19,16 +21,18 @@ Module的build.gradle文件
 
 ```
 dependencies {
-    implementation 'com.github.YpwCode:Aon:1.1.0'
+    implementation 'com.github.YpwCode:Aon:1.1.1'
 }
 // 或者
 dependencies {
-    compile 'com.github.YpwCode:Aon:1.1.0'
+    compile 'com.github.YpwCode:Aon:1.1.1'
 }
 
 ```
 
 ## 使用方式
+
+### Activity
 
 ```
 public class MainActivity extends AppCompatActivity {
@@ -50,6 +54,38 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "haha", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+}
+```
+
+### ListView的ViewHolder
+
+```
+class ListViewHolder {
+
+    @FindView(R.id.tv)
+    TextView textView;
+
+    public ListViewHolder(View itemView) {
+        Aon.bind(this, itemView);
+    }
+
+}
+```
+
+### RecyclerView的ViewHolder
+
+```
+class RecyclerViewHolder extends RecyclerView.ViewHolder {
+
+    @FindView(R.id.tv)
+    TextView textView;
+
+    public RecyclerViewHolder(View itemView) {
+        super(itemView);
+
+        Aon.bind(this, itemView);
+
     }
 }
 ```
