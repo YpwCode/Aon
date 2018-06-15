@@ -19,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View view = getWindow().getDecorView();
+
         // 注解解析类绑定
-        Aon.bind(this);
+        Aon.bind(this, view);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

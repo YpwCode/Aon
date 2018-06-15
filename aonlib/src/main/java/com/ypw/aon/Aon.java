@@ -1,7 +1,6 @@
 package com.ypw.aon;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 
 import java.lang.annotation.Annotation;
@@ -19,15 +18,21 @@ public class Aon {
      * @param target 解析目标
      */
     public static void bind(final Activity target) {
+        bind(target, target.getWindow().getDecorView());
+    }
+
+    /**
+     * 解析
+     * @param target 解析目标
+     */
+    public static void bind(final Object target, View view) {
         try {
             Class<?> clazz = target.getClass();
             // 获取所有的字段
             Field[] fields = clazz.getDeclaredFields();
 
             FindView findView;
-            View view;
             int id;
-            String name;
 
             // 对所有字段进行遍历
             for (Field field : fields){
@@ -41,23 +46,11 @@ public class Aon {
                         findView = field.getAnnotation(FindView.class);
                         // 反射访问私有成员，必须进行此操作
                         field.setAccessible(true);
-                        // 字段名
-                        name = field.getName();
                         // 注解值
                         id = findView.value();
-
-                        // 查找对象
-                        view = target.findViewById(id);
-                        if (view != null) {
-                            // 赋值
-                            field.set(target, view);
-                        } else {
-                            Log.e("TAG", "bind: 没有找到" + name);
-                        }
-
+                        field.set(target, view.findViewById(id));
                     }
                 }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
