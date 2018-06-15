@@ -1,5 +1,7 @@
 # Aon
 
+[![](https://jitpack.io/v/YpwCode/Aon.svg)](https://jitpack.io/#YpwCode/Aon)
+
 一个简单的注解库
 
 ## DownLoad
