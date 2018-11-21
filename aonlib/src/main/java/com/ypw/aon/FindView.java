@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * @author 2429219028@qq.com
- * @date 2018/6/14 14:50
+ * 2018/6/14 14:50
  * 描述：findViewById注解
  */
 @Target(ElementType.FIELD)

@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 
 /**
  * @author 2429219028@qq.com
- * @date 2018/6/14 14:50
+ * 2018/6/14 14:50
  * 描述：注解解析类
  */
 public class Aon {
@@ -23,7 +23,8 @@ public class Aon {
 
     /**
      * 解析
-     * @param target 解析目标
+     * @param target 解析目标类
+     * @param view 解析目标
      */
     public static void bind(final Object target, View view) {
         try {
