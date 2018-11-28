@@ -1,5 +1,3 @@
-import java.nio.charset.Charset
-
 // pack-upload.gradle
 
 // 指定编码
@@ -17,10 +15,10 @@ task javadoc(type: Javadoc) {
     options{
         encoding "UTF-8"
         charSet 'UTF-8'
-//        author true
-//        version true
-//        links "http://docs.oracle.com/javase/7/docs/api"
-//        title "这里写文档标题"
+        // author true
+        // version true
+        // links "http://docs.oracle.com/javase/7/docs/api"
+        // title "这里写文档标题"
     }
     failOnError false
     source = android.sourceSets.main.java.sourceFiles

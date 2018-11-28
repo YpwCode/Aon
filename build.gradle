@@ -3,6 +3,7 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -16,12 +17,13 @@ allprojects {
     repositories {
         jcenter()
         maven { url 'https://jitpack.io' }
-        maven { url 'http://127.0.0.1:8081/repository/emao/'
+        maven { url 'http://172.16.28.26:8081/repository/emao/'
             credentials {
-                username 'xxx'
-                password 'xxx'
+                username 'yangpengwei'
+                password 'yangpengwei1344'
             }
         }
+        google()
     }
 }
 
